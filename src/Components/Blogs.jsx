@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import image01 from "../assets/travel.png"
+import image02 from "../assets/marketing.png"
+import image03 from "../assets/fashion.png";
+import image04 from "../assets/food.png";
+import image05 from "../assets/health.png";
 const Blogs = () => {
   return (
     <>
@@ -14,7 +18,7 @@ const Blogs = () => {
           </div>
         </div>
         <div class="post col-3 text-center  pt-3">
-          <img src="src/assets/marketing.png"></img>
+          <img src={image02}></img>
           <div class="d-flex-column container justify-conter-center text-left pb-3 px-0">
             <p class="post-title py-2  m-0">The Mistake Every Small Business Makes in Its First Year</p>
             <p class="post-text ">Do you want to improve your site’s SEO ranking? Consider topics that focus on relevant keywords and relate back to your website or business.</p>
@@ -32,7 +36,7 @@ const Blogs = () => {
       </div>
       <div className=" row  px-5 py-3 d-flex justify-content-around">
         <div class="post col-3 text-center pt-3">
-          <img src="src\assets\fashion.png"></img>
+          <img src={image03}></img>
           <div class="d-flex-column container justify-conter-center text-left pb-3 px-0">
             <p class="post-title py-2  m-0">Best Fashion Blogs, Style Websites, Online Trends</p>
             <p class="post-text ">
@@ -41,7 +45,7 @@ const Blogs = () => {
               </div>
         </div>
         <div class="post col-3 text-center pt-3">
-          <img src="src\assets\food.png"></img>
+          <img src={image04}></img>
           <div class="d-flex-column container justify-conter-center text-left pb-3 px-0">
             <p class="post-title py-2  m-0">The Ultimate Cooking Recipe You'll Ever Need</p>
             <p class="post-text ">The range of street food has evolved over the years, blending traditional recipes with modern innovations. </p>
@@ -49,7 +53,7 @@ const Blogs = () => {
           </div>
         </div>
         <div class="post col-3 text-center pt-3">
-          <img src="src\assets\health.png"></img>
+          <img src={image05}></img>
           <div class="d-flex-column container justify-conter-center text-left pb-3 px-0">
             <p class="post-title py-2  m-0">Keep Your Body Moving All the fitness tips in one place</p>
             <p class="post-text ">Blogs topics cover ways to live a healthier lifestyle, foods to add to your diet, and more specific information on common health conditions.</p>
