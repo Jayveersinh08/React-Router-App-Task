@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import image01 from "../assets/travel.png"
 const Blogs = () => {
   return (
     <>
@@ -21,7 +22,7 @@ const Blogs = () => {
           </div>
         </div>
         <div class="post col-3 text-center pt-3">
-          <img src="src\assets\travel.png"></img>
+          <img src= {image01}></img>
           <div class="d-flex-column container justify-conter-center text-left pb-3 px-0">
             <p class="post-title py-2  m-0">Travel Blog • How To Travel The World</p>
             <p class="post-text ">Explore. Dream. Discover. This is a world travel blog about beautiful destinations, with free tips & guides on how to travel the world!</p>
