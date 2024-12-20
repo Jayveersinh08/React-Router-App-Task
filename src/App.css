@@ -1,0 +1,116 @@
+
+.void {
+  font-size: 50px;
+  font-family: 'math';
+}
+
+.tag {
+  font-weight: 500;
+  font-size: 15px;
+  font-family: 'math';
+}
+
+.navbar {
+  font-size: 20px;
+}
+.navbar ul li a{
+  text-decoration: none;
+  color: black;
+}
+
+
+.active-link {
+  font-weight: bold;
+  color:#93bded;
+}
+
+
+
+@media only screen and (max-width:768px) {
+
+
+  .mobile {
+    position: absolute !important;
+    top: 6.6rem;
+    text-align: center;
+    width: 100%;
+    left: 0%;
+    background-color: #93bded;
+    justify-content: center ;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    padding: 3rem 0;
+  }
+
+  .web {
+    display: none !important;
+  }
+}
+
+
+
+.home-container{
+  height: 80vh;
+}
+
+#home-text{
+  font-family: math;
+  font-size: 50px;
+}
+
+#quote-text{
+  font-family: math;
+  font-size: 30px;
+}
+
+/* App.css */
+.carousel-container {
+  margin-top: 20px;
+}
+
+/* src/Components/Home.css */
+.item {
+
+  height:250px;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 12px 10px;
+  z-index: -1;
+  background-color: #bed5f0;
+}
+
+.item-text{
+  font-size: 20px;
+  height: 180px;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  
+}
+
+.post{
+  border: 2px solid gray;
+  box-shadow: 10px 10px 8px #888888;}
+.post img{
+height: 300px;
+width: 200px;
+}
+.post-title{
+  font-size: 15px;
+  font-weight: 700;
+  font-family: math;
+}
+.post-text{
+  font-size: 12px;
+}
+
+.about-title{
+  font-family: math;
+  font-size: 50px;
+  font-weight: 800;
+}
