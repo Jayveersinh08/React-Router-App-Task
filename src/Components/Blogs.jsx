@@ -13,7 +13,7 @@ const Blogs = () => {
           </div>
         </div>
         <div class="post col-3 text-center  pt-3">
-          <img src="src\assets\marketing.png"></img>
+          <img src="src/assets/marketing.png"></img>
           <div class="d-flex-column container justify-conter-center text-left pb-3 px-0">
             <p class="post-title py-2  m-0">The Mistake Every Small Business Makes in Its First Year</p>
             <p class="post-text ">Do you want to improve your site’s SEO ranking? Consider topics that focus on relevant keywords and relate back to your website or business.</p>
