@@ -7,10 +7,11 @@ const Login = () => {
     const { login, logout, isAuthenticated, username } = useAuth();
     const navigate = useNavigate();
     const [inputUsername, setInputUsername] = useState("");
+    const [inputPassword, setInputPassword] = useState("");
 
     const handleLogin = (e) => {
         e.preventDefault();
-        login(inputUsername); // Pass the username to the login function
+        login(inputUsername, inputPassword); // Pass the username to the login function
         navigate("/login"); // Redirect to personal blog after login
     };
 
@@ -47,6 +48,8 @@ const Login = () => {
                             id="password"
                             name="password"
                             placeholder="Enter Password"
+                            value={inputPassword}
+                            onChange={(e) => setInputPassword(e.target.value)}
                             required
                         />
                         <br />

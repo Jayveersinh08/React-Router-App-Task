@@ -45,7 +45,7 @@ const Fashion_blog = () => {
                     <ol class="list-style-number d-flex justify-content-around py-4">
                         {sortedPosts.map((post) => (
                             <div key={post.id} class="post p-5  mx-2 rounded border bg-light ">
-                                <Link class="text-decoration-none text-dark " to={post.isauthenticate ? `/blogs/fashion_blog/${post.id}` : '/login'}>{post.title}</Link>
+                                <Link class="text-decoration-none text-dark " to={post.isauthenticate ? `/blogs/fashion_blog/${post.id}` : post.role === "superuser" ? '/superuser' : post.role === "admin" ? '/admin' : '/'}>{post.title}</Link>
                             </div>
                         ))}
                     </ol>

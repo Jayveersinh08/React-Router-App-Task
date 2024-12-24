@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Components/Navbar.jsx';
 import Notfound from './Notfound.jsx';
 import Protected from './Protected.jsx';
-import Login from './Components/Login.jsx';
+import Login from './Components//Login.jsx';
 import Personal_blog from './Pages/Personal_blog.jsx';
 import Marketing_blog from './Pages/Marketing_blog.jsx';
 import Food_blog from './Pages/Food_blog.jsx';
@@ -23,6 +23,8 @@ import TravelPost from './Posts/TravelPost.jsx';
 import FashionPost from './Posts/FashionPost.jsx';
 import HealthPost from './Posts/HealthPost.jsx';
 import { AuthProvider } from './AuthContext.jsx';
+import RestrictedAdmin from './Pages/RestrictedAdmin.jsx';
+import RestrictedSuperuser from './Pages/RestrictedSuperuser.jsx';
 
 function App() {
   return (
@@ -31,22 +33,24 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route path='/' Component={Home}></Route>
-            <Route path='/Blogs' Component={Blogs}></Route>
+            <Route path='/' element={<Home/>}></Route>
+            <Route path='/Blogs' element={<Blogs/>}></Route>
             <Route path='/Blogs/personal_blog' element={<Personal_blog />}></Route>
             <Route path='/Blogs/personal_blog/:postId' element={<PersonalPost />}></Route>
-            <Route path='/Blogs/marketing_blog' Component={Marketing_blog}></Route>
-            <Route path='/Blogs/marketing_blog/:postId' Component={MarketingPost}></Route>
-            <Route path='/Blogs/food_blog/' Component={Food_blog}></Route>
-            <Route path='/Blogs/food_blog/:postId' Component={FoodPost}></Route>
-            <Route path='/Blogs/travel_blog' Component={Travel_blog}></Route>
-            <Route path='/Blogs/travel_blog/:postId' Component={TravelPost}></Route>
-            <Route path='/Blogs/health&fitness_blog' Component={Health_blog}></Route>
-            <Route path='/Blogs/health&fitness_blog/:postId' Component={HealthPost}></Route>
-            <Route path='/Blogs/fashion_blog' Component={Fashion_blog}></Route>
-            <Route path='/Blogs/fashion_blog/:postId' Component={FashionPost}></Route>
-            <Route path='/About' Component={About}></Route>
-            <Route path='/login' Component={Login}></Route>
+            <Route path='/Blogs/marketing_blog' element={<Marketing_blog/>}></Route>
+            <Route path='/Blogs/marketing_blog/:postId' element={<MarketingPost/>}></Route>
+            <Route path='/Blogs/food_blog/' element={<Food_blog/>}></Route>
+            <Route path='/Blogs/food_blog/:postId' element={<FoodPost/>}></Route>
+            <Route path='/Blogs/travel_blog' element={<Travel_blog/>}></Route>
+            <Route path='/Blogs/travel_blog/:postId' element={<TravelPost/>}></Route>
+            <Route path='/Blogs/health&fitness_blog' element={<Health_blog/>}></Route>
+            <Route path='/Blogs/health&fitness_blog/:postId' element={<HealthPost/>}></Route>
+            <Route path='/Blogs/fashion_blog' element={<Fashion_blog/>}></Route>
+            <Route path='/Blogs/fashion_blog/:postId' element={<FashionPost/>}></Route>
+            <Route path="/superuser" element={<RestrictedSuperuser/>}></Route>
+            <Route path="/admin" element={<RestrictedAdmin/>}></Route>
+            <Route path='/About' element={<About/>}></Route>
+            <Route path='/login' element={<Login/>}></Route>
             <Route path='*' element={<Notfound />}></Route>
             <Route path='/protected' element={
               <Protected >
