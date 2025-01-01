@@ -6,6 +6,7 @@ import image03 from "../assets/fashion.png";
 import image04 from "../assets/food.png";
 import image05 from "../assets/health.png";
 const Blogs = () => {
+  
   return (
     <>
       <div className=" row  px-5 py-3 d-flex justify-content-around">

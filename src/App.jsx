@@ -35,17 +35,17 @@ function App() {
           <Routes>
             <Route path='/' element={<Home/>}></Route>
             <Route path='/Blogs' element={<Blogs/>}></Route>
-            <Route path='/Blogs/personal_blog' element={<Personal_blog />}></Route>
+            <Route path='/Blogs/personal_blog' element={<Protected><Personal_blog /></Protected>}></Route>
             <Route path='/Blogs/personal_blog/:postId' element={<PersonalPost />}></Route>
-            <Route path='/Blogs/marketing_blog' element={<Marketing_blog/>}></Route>
+            <Route path='/Blogs/marketing_blog' element={<Protected><Marketing_blog/></Protected>}></Route>
             <Route path='/Blogs/marketing_blog/:postId' element={<MarketingPost/>}></Route>
-            <Route path='/Blogs/food_blog/' element={<Food_blog/>}></Route>
+            <Route path='/Blogs/food_blog/' element={<Protected><Food_blog/></Protected>}></Route> 
             <Route path='/Blogs/food_blog/:postId' element={<FoodPost/>}></Route>
-            <Route path='/Blogs/travel_blog' element={<Travel_blog/>}></Route>
+            <Route path='/Blogs/travel_blog' element={<Protected><Travel_blog/></Protected>}></Route>
             <Route path='/Blogs/travel_blog/:postId' element={<TravelPost/>}></Route>
-            <Route path='/Blogs/health&fitness_blog' element={<Health_blog/>}></Route>
+            <Route path='/Blogs/health&fitness_blog' element={<Protected><Health_blog/></Protected>}></Route>
             <Route path='/Blogs/health&fitness_blog/:postId' element={<HealthPost/>}></Route>
-            <Route path='/Blogs/fashion_blog' element={<Fashion_blog/>}></Route>
+            <Route path='/Blogs/fashion_blog' element={<Protected><Fashion_blog/></Protected>}></Route>
             <Route path='/Blogs/fashion_blog/:postId' element={<FashionPost/>}></Route>
             <Route path="/superuser" element={<RestrictedSuperuser/>}></Route>
             <Route path="/admin" element={<RestrictedAdmin/>}></Route>

@@ -1,5 +1,5 @@
 // Login.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -12,18 +12,22 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         login(inputUsername, inputPassword); // Pass the username to the login function
+        localStorage.setItem("UserData", JSON.stringify({"username" :inputUsername , "isauthenticated" :true}));
+
         navigate("/login"); // Redirect to personal blog after login
     };
 
     const handleLogout = () => {
         logout();
+        localStorage.removeItem("UserData");
+
         navigate("/login"); // Redirect back to login page after logout
     };
 
     return (
         <div className="container d-flex flex-column text-center justify-content-center">
             {!isAuthenticated ? (
-                <form onSubmit={handleLogin}>
+                <form onSubmit={handleLogin} method="post">
                     <fieldset>
                         <legend className="py-3 fs-1">Login Form</legend>
                         <label htmlFor="username" className="py-2 mx-2">
@@ -37,6 +41,7 @@ const Login = () => {
                             value={inputUsername}
                             onChange={(e) => setInputUsername(e.target.value)}
                             required
+
                         />
                         <br />
                         <br />
@@ -59,6 +64,7 @@ const Login = () => {
                         </button>
                     </fieldset>
                 </form>
+
             ) : (
                 <div>
                     <h2 className="py-3">Welcome, {username}!</h2>
