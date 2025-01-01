@@ -1,17 +1,19 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { useAuth } from "./AuthContext";
 
-const ProtectedComponent = ({ children }) => {
-  const {  isAuthenticated } = useAuth();
+const Protected = ({ children }) => {
+    const storedData = JSON.parse(localStorage.getItem("LocalData"));
 
+    let isAuthenticated =false;
+if( storedData && storedData.isAuthenticated === true){
+  isAuthenticated =true
+}
+   console.log(isAuthenticated)
+    if (!isAuthenticated) {
+        return <Navigate to="/login" />;
+    }
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" />;
-  }
-
-
-  return children;
+    return children;
 };
 
-export default ProtectedComponent;
+export default Protected;

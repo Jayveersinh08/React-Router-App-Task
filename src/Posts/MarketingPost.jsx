@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
 
 const MarketingPost = () => {
-  const { data, role } = useAuth();
+  const { data, role, isauthenticated } = useAuth();
   const { postId } = useParams();
   const navigate = useNavigate();
 
@@ -18,20 +18,21 @@ const MarketingPost = () => {
     (role === "superuser" && post.role !== "admin") ||
     role === "admin";
 
-    if (!isAccessible) {
-        if (role === "user") {
-          if(post.role === "superuser"){
-            navigate("/superuser");
-          }
-          if(post.role === "admin"){
-            navigate("/admin");
-          }
-          
-        } else if (role === "superuser" && post.role === "admin") {
-          navigate("/admin");
-        }
-        return null; // Prevent further rendering
+ 
+   if(!isAccessible) {
+    if (role === "user") {
+      if (post.role === "superuser") {
+        navigate("/superuser");
       }
+      if (post.role === "admin") {
+        navigate("/admin");
+      }
+
+    } else if (role === "superuser" && post.role === "admin") {
+      navigate("/admin");
+    }
+    return null; // Prevent further rendering
+  }
 
   return (
     <div className="container">

@@ -32,7 +32,7 @@ const Navbar = () => {
               <NavLink class=" nav-items" className={({ isActive }) => (isActive ? 'active-link' : '')} to="/about">About</NavLink>
             </li>
             <li class="px-4 py-2 py-md-0">
-              <NavLink class=" nav-items" className={({ isActive }) => (isActive ? 'active-link' : '')} to="/Login">{isAuthenticated?"Logout":"Login"}</NavLink>
+              <NavLink class=" nav-items" className={({ isActive }) => (isActive ? 'active-link' : '')} to="/login">{isAuthenticated?"Logout":"Login"}</NavLink>
             </li>
           </ul>
       </div>

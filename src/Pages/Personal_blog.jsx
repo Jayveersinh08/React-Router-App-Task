@@ -13,8 +13,8 @@ const Personal_blog = () => {
     sortOrder === "asc"
       ? a.title.localeCompare(b.title)
       : sortOrder === "desc"
-      ? b.title.localeCompare(a.title)
-      : 0
+        ? b.title.localeCompare(a.title)
+        : 0
   );
 
   const handleSortChange = (e) => {
@@ -23,15 +23,19 @@ const Personal_blog = () => {
   };
 
   const handlePostClick = (post) => {
-    // Pass the role and post to handle navigation logic
-    if (role === "user" && (post.role === "superuser" || post.role === "admin")) {
-      navigate("/superuser"); // User cannot access superuser or admin posts
+    
+
+    if (role === "user" && post.role === "superuser") {
+      navigate("/superuser"); 
+    }else if (role === "user" && post.role === "admin") {
+      navigate("/admin"); 
     } else if (role === "superuser" && post.role === "admin") {
-      navigate("/admin"); // Superuser cannot access admin posts
-    } else {
-      navigate(`/blogs/personal_blog/${post.id}`); // Navigate to the post
+      navigate("/admin"); 
+    } else if (post.id) {
+      navigate(`/blogs/personal_blog/${post.id}`);
     }
   };
+
 
   return (
     <div className="container">
@@ -63,7 +67,7 @@ const Personal_blog = () => {
               <div
                 className="post p-5 mx-2 rounded border bg-light"
                 key={post.id}
-                onClick={() => handlePostClick(post)} // Click handler for redirection
+                onClick={() => handlePostClick(post)}
                 style={{ cursor: "pointer" }}
               >
                 <Link className="text-decoration-none text-dark">{post.title}</Link>

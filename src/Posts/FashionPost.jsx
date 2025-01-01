@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
 
 const FashionPost = () => {
-  const { data, role } = useAuth();
+  const { data, role, isauthenticated } = useAuth();
   const { postId } = useParams();
   const navigate = useNavigate();
 
@@ -18,15 +18,16 @@ const FashionPost = () => {
     (role === "superuser" && post.role !== "admin") ||
     role === "admin";
 
-  if (!isAccessible) {
+ 
+   if(!isAccessible) {
     if (role === "user") {
-      if(post.role === "superuser"){
+      if (post.role === "superuser") {
         navigate("/superuser");
       }
-      if(post.role === "admin"){
+      if (post.role === "admin") {
         navigate("/admin");
       }
-      
+
     } else if (role === "superuser" && post.role === "admin") {
       navigate("/admin");
     }
